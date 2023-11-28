@@ -1,0 +1,206 @@
+IAM service 
+1.  How many resources do we have in IAM?
+Ans:  In AWS (Amazon Web Services), IAM (Identity and Access Management) allows you to control access to AWS services and resources. The number of IAM resources you have depends on your 
+    specific AWS account and usage. 
+    User, roles, polices, groups, instance profile, server certificate, customer managed polices, SAMl provider (security assertion markup language provider), OIDC (openid connect).
+
+2.   what is IAM User?
+Ans: IAM Users represent that application and individual interact with AWS resources.  create as many IAM users as needed within AWS account.
+
+3. what is IAM Roles?
+Ans: IAM roles are used to delegate permissions to AWS services, applications, or other AWS accounts. You can create as many roles as needed.
+
+4. what is IAM Group?
+Ans: IAM groups are collections of IAM users. You can organize users into groups to manage    permissions more easily. There is no strict limit to the number of groups you can create.
+
+5. what is the IAM Policy?
+Ans: IAM policies define the permissions associated with users, groups, and roles. You can create multiple policies to control access to different resources and actions.
+
+6. Identities in IAM?
+Ans: Identities in IAM are like keys that determine who can access and perform actions on AWS resources, such as Users, groups, roles, and external users, all managed with permissions.
+
+7. Deployment Model In IAM?
+Ans: Deployment model in IAM refers to how you set up and organize who can access your AWS resources, like whether you control access centrally or independently in different accounts.
+ 
+8. where do we attach identity Based policy?
+Ans: Identity-based policies in AWS IAM (Identity and Access Management) are attached directly to IAM users, groups, or roles. These policies define what actions are allowed or denied for specific identities.
+
+9. Where do we attach Resource Based policy?
+Ans: Resource-based policies are attached to AWS resources, like S3 buckets or Lambda functions, and they control which identities (users or other AWS resources) can access or interact with the resource.
+
+10. Can we be able to create policy via json code?
+Ans: Yes, you can create policies using JSON code in AWS IAM. A JSON policy defines what actions are allowed or denied on AWS resources, and you can attach these policies to users, groups, or roles to manage their access to those resources.
+
+11. If one user has created it by default, which permission has been assigned to that user?
+Ans: 
+
+
+12. What is  dominator policy?
+Ans: In AWS Identity and Access Management (IAM), the "Dominator Policy" doesn't refer to a specific policy or concept. However, in the context of IAM, policies define permissions. 
+ IAM policies are rules that specify what actions are allowed or denied on AWS resources. These policies can be attached to users, groups, or roles, and they determine what those entities can do within an AWS environment.
+ For example, a policy could allow a user to read files in a specific Amazon S3 bucket or allow a group of users to launch and manage instances in Amazon EC2. Policies basically control who (users) can do what (actions) on which resources.
+ So, in simple terms, IAM policies are like a set of rules that decide what different users or groups are allowed to do in Amazon Web Services. They help manage permissions in AWS services.
+
+13. what is ARN? What are the Fields in ARN?
+Ans: An Amazon Resource Name (ARN) is a globally unique identifier used in Amazon Web Services (AWS) to specify and reference AWS resources. ARNs are used in various AWS services to identify and manage resources like EC2 instances, S3 buckets, Lambda functions, IAM roles, and more.
+ An ARN is structured as follows:
+arn:partition:service:region:account-id:resource
+ARNs help uniquely identify AWS resources, and they are used for specifying resource permissions, managing access, and referencing resources across different AWS services.
+
+14. How many types of ARN Partition?
+Ans: There are two types of ARN partitions: "AWS" for the standard AWS partition and "AWS-CN" for the AWS China partition.
+
+15. what are tags?
+Ans: A tag is a label that you or AWS assigns to an AWS resource. Each tag consists of a key and a value. For each resource, each tag key must be unique, and each tag key can have 
+    only one value. You can use tags to organize your resources, and cost allocation tags to track your AWS costs on a detailed level.
+   or
+    In an IAM (Identity and Access Management) service, tags are labels or metadata assigned to resources such as users, groups, or policies to help categorize and manage them. 
+    Tags are used for organizing, searching, and controlling access to resources in a more structured and efficient manner.
+
+
+S3 SERVICE:
+
+1.  Difference between block storage and object storage?
+Ans: Block Storage and Object Storage are two ways to store your digital stuff, and they have some key differences:
+
+    1. Block Storage is like a bunch of blank sheets of paper:
+
+   - You can write and erase on each page separately.
+   - It's great for things that need constant changes, like computer programs and databases.
+   - You have to keep track of where everything is on your own.
+
+    2. Object Storage is more like a box where you put things:
+
+   - You can't change just one thing inside the box; you replace the whole box.
+   - It's good for storing big collections of things, like photos, videos, or backups.
+   - Each box has a label telling you what's inside, so it's easier to find stuff.
+
+    So, if you want to work with individual pieces of data, like editing a document, go for Block Storage. But if you have lots of files you don't change often, 
+    like a collection of photos, Object Storage is a better fit.
+
+   
+  2. Difference Between Static And Dynamic Website?
+  Ans:  STATIC WEBSITE:
+         1. A static webpage remains the same or fixed, in terms of the content it displays.
+         2. Static websites are typically built using HTML and CSS, and the content is hardcoded into web pages.
+         3. Static sites are faster and use fewer server resources because the content is pre-built and cached.
+        DYNAMIC WEBSITE:
+         1. A dynamic webpage is the opposite, its content changes according to the location of the user, or based on actions a user has made on the page before.
+         2. Dynamic website is the use server-side technologies like PHP, Python, Ruby, or JavaScript frameworks (e.g., Node.js) to create and deliver content.
+         3. Dynamic sites can be slower and require more server resources, especially when handling complex operations and databases.
+
+
+3. what are the naming rules?
+Ans: Bucket names must contain 3-63 characters. Names containing dots can contain up to 222 characters, but each dot-separated component can be no longer than 63 characters. 
+    Bucket names cannot be represented as an IP address in dotted-decimal notation (for example, 192.168. 5.4).
+   it is the  uniquely identify the bucket name.
+
+
+4. What is the major resource of s3 Buckets?
+Ans: The major resource of Amazon S3 buckets is object storage, where you can store and retrieve data, including files, documents, and multimedia content.
+
+5. why do we need to host static websites instead of dynamic websites?
+Ans: the hosting website is often high cost-effective and efficient for content that doesn't require real-time data processing or interactivity.
+
+6. what is versioning and why do we need versioning?
+Ans: versioning means update the data. Versioning is a feature in Amazon S3 that allows you to preserve, retrieve, and restore every version of every object stored in a bucket, providing data protection 
+    and the ability to recover from unintended overwrites and deletions.
+
+7. what are the objects and types of objects that we areuploading into the s3 buckets?
+Ans: In Amazon S3, "objects" refer to the individual files or data items that you store within a bucket. Objects can be of various types and formats, 
+such as documents, images, videos, backups, logs, and any other digital content. These objects are the fundamental units of storage
+within S3, and they are uniquely identified by their key (i.e., the object's name) within a bucket.
+In Amazon S3 buckets, you can upload various types of objects, including:
+1. Static Web Content: HTML, CSS, JavaScript files for hosting static websites.
+2. Media Files: Images, audio, video files.
+3. Backups: Database backups, server configurations.
+4. Documents: PDFs, text documents, spreadsheets.
+5. Application Assets: App binaries, fonts, icons.
+6. Logs: Server logs, access logs.
+7. Archives: ZIP files, compressed data.
+8. Data Files: Data sets, sensor readings, IoT data.
+Amazon S3 is versatile and can store almost any type of digital content, making it a popular choice for data storage and distribution.
+
+8. why is MFA delete important in S3 bucket object level?
+Ans: MFA (Multi-Factor Authentication) delete in S3 bucket object level is important to provide an extra layer of security by requiring
+    a second authentication factor to delete objects, preventing accidental or unauthorized data loss.
+
+9. What is S3 Multipart upload ?
+Ans: S3 Multipart Upload is a feature in Amazon Simple Storage Service (S3) that allows large files to be uploaded in parts,
+    improving reliability and efficiency by enabling parallel uploads and retries for individual parts.
+
+10. What are the storage classes in Amazon S3 ?
+Ans: Amazon S3 offers several storage classes, including Standard, Intelligent-Tiering, Glacier, and more, each designed for specific data access and cost requirements.
+
+11. What is ACL ?
+Ans: An ACL, or Access Control List, is a set of permissions associated with an object or resource in a system, typically used to 
+    specify who can access or manipulate that resource and what actions they are allowed to perform. In the context of Amazon S3, 
+    ACLs can be used to control access to S3 buckets and objects, specifying who can read, write, or delete them.
+
+
+12. Why do we need ACL ?
+Ans: ACLs are needed to control and manage access to resources, like files or objects, by specifying which users or systems can perform specific actions on them, 
+    enhancing security and data protection.
+
+13. What is a Life cycle policy ? Why do we need to use the life cycle rule ?
+Ans: A lifecycle policy in Amazon S3 defines when and how objects should be transitioned to different storage classes or deleted, helping to automate data management, 
+    reduce storage costs, and ensure compliance with data retention policies.
+
+14. How can we make our bucket public ?
+Ans: To make an Amazon S3 bucket public, you can configure its access settings by setting a bucket policy or making objects public by setting their 
+        permissions to allow public read access.
+
+15. How can we give public access to our bucket ?
+Ans: To grant public access to an Amazon S3 bucket, create a bucket policy allowing "s3:GetObject" for the "Principal" of "*", or make individual objects public by setting their 
+    permissions to allow "Everyone" read access.
+
+
+16. Aws pricing factor of the S3 Service.
+Ans: Amazon S3 pricing factors include the amount of data stored, data transfer (data in/out), requests made, storage class used, and any 
+    additional features or options like data management policies or data retrieval costs. Pricing can vary depending on these factors, 
+    and AWS provides a detailed pricing page for S3 to calculate costs accurately.
+
+
+17. How can we make our object public ?
+Ans: To make an object in Amazon S3 public, you can set the object's permissions to allow public access. Here's how to do it:
+
+    1. Go to the AWS Management Console and navigate to the S3 service.
+    2. Locate the specific object you want to make public within your S3 bucket.
+    3. Select the object by clicking its checkbox.
+    4. Click the "Actions" button and choose "Make public."
+    This action will modify the object's permissions to allow public read access, making it accessible to anyone with the object's URL. 
+    Make sure to be cautious when making objects public, as it can expose your data to the internet.
+
+
+18. How can we configure the static website logs in s3 ?
+Ans: To configure static website logs for an S3 bucket, follow these steps:
+
+    1. Sign in to the AWS Management Console.
+    2. Navigate to the S3 service.
+    3. Click on the S3 bucket that you're using for your static website.
+    4. In the bucket's properties tab, click on "Static website hosting."
+    5. In the "Static website hosting" panel, scroll down to the "Logging" section.
+    6. Enable logging by selecting the "Enable" option.
+    7. Choose an existing S3 bucket where you want to store the log files or create a new one.
+    8. Specify a Target Prefix to define the path for the log files within the chosen bucket.
+    9. Click the "Save" button to confirm your logging configuration.
+    With these settings, S3 will start recording access logs for your static website and store them in the specified logging bucket. 
+    This can help you monitor and analyze traffic to your static website.
+
+19. What is CORS ?
+Ans: CORS, or Cross-Origin Resource Sharing, is a security feature that allows web pages from one domain to request and access resources (like data or images) from a different domain, 
+    helping to prevent unauthorized access while enabling safe data sharing between websites.
+
+20. What is S3 Inventory ?
+Ans: Amazon S3 Inventory is a feature that provides reports about your S3 objects, such as their metadata and encryption status, making it easier to manage and analyze data, 
+    ensure compliance, and optimize storage usage.
+
+21. What does it mean by Requester pays ?
+Ans: In Amazon S3, "Requester Pays" is a feature that allows the person making the data request (the requester) to pay for the data transfer and request costs, rather than the bucket owner. 
+    This is useful for scenarios where the bucket owner wants to share data but shift the cost burden to the parties making the requests, such as in data sharing or distribution use cases.
+
+22.What is the secondary word to Transfer acceleration ?, why we need to use this transfer acceleration ?
+Ans: The secondary term for "Transfer Acceleration" in Amazon S3 is "S3 Transfer Acceleration." 
+    S3 Transfer Acceleration is used to speed up uploading and downloading of files to and from Amazon S3 buckets by leveraging Amazon CloudFront's globally distributed edge locations. 
+    It's particularly beneficial when transferring large files or when users are located far away from the AWS region where the S3 bucket is located, 
+    improving transfer speeds and reducing latency.
