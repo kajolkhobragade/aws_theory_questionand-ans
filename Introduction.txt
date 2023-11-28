@@ -1,0 +1,36 @@
+1. what is cloud computing?
+ans : "The cloud"  is refers to servers that are accessed over the Internet, and the software and databases that run on those servers. 
+       Cloud servers are located in data centers all over the world. By using cloud computing, users and companies do not have 
+        to manage physical servers themselves or run software applications on their own machines.
+
+2. Deployement model in cloud?
+ans : the four deployement model in cloud.
+       1. private cloud : A private cloud is a server, data center, or distributed network wholly dedicated to one organization. 
+              Resources are used exclusively by a single organization. Private clouds can be hosted on-premises or by a third-party provider. 
+              They offer greater control and customization but may require more management.
+       2. public cloud : A public cloud is a service run by an external vendor that may include servers in one or multiple data centers. 
+              Unlike a private cloud, public clouds are shared by multiple organizations. 
+              Services are offered over the internet to anyone who wants to use them. 
+              Public cloud resources are owned and operated by third-party cloud service providers like Amazon Web Services (AWS), 
+              Microsoft Azure, and Google Cloud Platform (GCP).
+       3. hybrid cloud : Combines both public and private cloud resources, allowing data and applications to be shared between them. Hybrid cloud enables greater flexibility 
+          and optimization of existing infrastructure.
+       4. comunnating cloud : it will use that private and public cloud. 
+
+3. service model in cloud?
+ans :   1. Infrastructure as a Service (IaaS): Provides virtualized computing resources over the internet. 
+       Users can rent virtual machines, storage, and networking components. Examples include Amazon Web Services (AWS) and Microsoft Azure.
+
+       2. Platform as a Service (PaaS): Offers a platform that includes development tools, databases, and application hosting environments. 
+       PaaS enables developers to build, deploy, and manage applications without worrying about the underlying infrastructure. Examples include Google App Engine and Heroku.
+
+       3. Software as a Service (SaaS): Delivers software applications over the internet on a subscription basis. 
+       Users can access these applications through web browsers without needing to install or maintain software locally. 
+       Examples include Gmail, Microsoft 365, and Salesforce.
+
+4. what is service? and what are resources?
+ans : The resource is the “thing” the service is “what it does”. In AWS, a resource is an entity that you can work with. 
+      AWS is a platform that offers both core cloud capabilities and the services that enable them to evolve as they move along their cloud journey. 
+       AWS provides building blocks that you can assemble quickly to support virtually any workload.
+
+
