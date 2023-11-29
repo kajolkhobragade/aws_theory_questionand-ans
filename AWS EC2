@@ -1,0 +1,45 @@
+What is EC2, Why do we need EC2 service in cloud computing ?
+Features of Amazon EC2 ?
+What is Hypervisor ? and its types ?
+Where we use hypervisor
+Steps to create an EC2 instance.
+EC2 Instance state ?
+How many types of EC2 Instance-State codes ?
+What is the meaning of server hibernating mode ?
+What is KMS ?
+AWS Amazon EC2 Instance types ?
+How many types of status checks happen in aws ?
+When we see the global view option in ec2 service ?
+When we logged into the cloud account by default why do we always jump into the north virginia region, why it’s most popular ?
+What are EBS Volumes and its types ?
+Purpose of Using EBS volumes ?
+How many types of purchasing options do we have in aws ec2 ?
+Difference between AWS AMI Image & AWS Template ?
+What is NIC & it’s types ?
+What is elastic IP ? & WHY were we used ?
+What is the snapshot of why we use it ?
+How can we save money in snapshot costing, if an automated snapshot has been created ?
+What is the lifecycle manager in snapshot ?
+How does the Amazon lifecycle manager work ?
+Difference between Security Group & NACL ?
+What are NACL & Its types ?
+How many IP Addresses can we attach to the instances ?
+How many types of volume states do we have ?
+What is a key pair, and its types ?
+What is load balancer and its types ?
+How does the load balancer work in the backend? Can you explain it ?
+Features of Load Balancers ?
+What is ASG ? & Its types ?
+What is a Health Check ?
+What is the threshold ?
+What is the group of LB ?
+Why do we prefer ALB over ALB ?
+Difference between Web server & Application server ?
+What is the target group ?
+What is the desired capacity in ASG ?
+How many types of the Scaling option ?
+Scaling plans ?
+Types Auto scaling
+Difference between vertical scaling and horizontal scaling ?
+Difference between AMI & Snapshot ?
+
