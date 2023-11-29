@@ -1,0 +1,11 @@
+What is SNS ?
+Why do we use SNS ?
+What is an Amazon SNS function, and how we can configure it.
+Difference between Amazon SNS & Amazon SQS.
+What are the different delivery formats and transports in AWS SNS ?
+What is the difference between SNS FIFO & Standard while creating the SNS topic.
+On which services are configured with the AWS SNS ?
+What is 10DLC in AWS ?
+What are FIFO topics on SNS ?
+What is SNS Mobile Push ?
+On which delivery method do we use and configure the subscription ?
