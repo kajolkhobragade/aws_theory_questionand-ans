@@ -204,3 +204,4 @@ Ans: The secondary term for "Transfer Acceleration" in Amazon S3 is "S3 Transfer
     S3 Transfer Acceleration is used to speed up uploading and downloading of files to and from Amazon S3 buckets by leveraging Amazon CloudFront's globally distributed edge locations. 
     It's particularly beneficial when transferring large files or when users are located far away from the AWS region where the S3 bucket is located, 
     improving transfer speeds and reducing latency.
+
