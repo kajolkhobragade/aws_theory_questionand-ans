@@ -1,4 +1,7 @@
 What is a cloud trail ?
+ans: A cloud trail is a service that records and tracks all the actions and changes made within a cloud computing environment, 
+     providing a detailed history of activities for security, compliance, and analysis purposes.
+
 Why do we use trails, what is the exact purpose of enabling the trail in cloud production accounts ?
 Explain how we can create a trail in aws cloud trail ?
 How can we enable logging for S3 bucket using cloud trails ?
