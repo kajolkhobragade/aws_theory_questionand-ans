@@ -1,11 +1,46 @@
 What is SNS ?
+ans : SNS typically stands for "Social Networking Service," which refers to online platforms that allow people to connect and interact with each other.
+      Amazon Simple Notification Service (Amazon SNS) is a managed service that provides message delivery from publishers to subscribers
+     (also known as producers and consumers).
+
 Why do we use SNS ?
-What is an Amazon SNS function, and how we can configure it.
+ans : We use SNS to connect and communicate with others, share information, and stay updated on the activities and interests of friends, family, or communities online.
+
+What is an Amazon SNS function, and how we can configure it?
+ans : Amazon SNS (Simple Notification Service) is a cloud service that enables message distribution to a distributed set of recipients. To configure it, you set up topics, 
+      subscribe endpoints (like email or mobile devices), and publish messages to the topics.
+
 Difference between Amazon SNS & Amazon SQS.
+ans : Amazon SNS (Simple Notification Service) is used for sending messages to multiple subscribers, such as email, SMS, or other endpoints, 
+    in a publish-subscribe model. Amazon SQS (Simple Queue Service) is a message queuing service that decouples the components of a cloud application, 
+    allowing them to communicate asynchronously by sending and receiving messages.
+   In simple terms, SNS is for broadcasting messages to multiple recipients, while SQS is for reliably storing and retrieving messages 
+    between individual components.
+
 What are the different delivery formats and transports in AWS SNS ?
+ans : Multiple subscription types: Messages can be delivered to application-to-application (A2A) endpoints (Amazon SQS, Amazon Kinesis Data Firehose, AWS Lambda, HTTPS) 
+    as well as application-to-person (A2P) endpoints (SMS, mobile push, and email).
+
 What is the difference between SNS FIFO & Standard while creating the SNS topic.
+ans : 
+
+
 On which services are configured with the AWS SNS ?
+ans : Amazon Simple Notification Service (AWS SNS) is configured with various AWS services, such as Amazon S3, Lambda, EC2, and others, to enable event-driven 
+      communication and notifications within the AWS cloud ecosystem.
+
 What is 10DLC in AWS ?
+ans : Ten-Digit Long Code, or more commonly shortened as 10DLC, is intended specifically for sending Application-to-Person (A2P). 
+
+
 What are FIFO topics on SNS ?
+ans : Amazon SNS FIFO (first in, first out) topics support delivery to both Amazon SQS standard and FIFO queues to provide 
+      customers with flexibility and control when integrating distributed applications that require data consistency in near real-time.
+
+
 What is SNS Mobile Push ?
+ans : the ability to send push notification messages directly to apps on mobile devices.
+
 On which delivery method do we use and configure the subscription ?
+ans : You use and set up subscriptions through the delivery method specified by the service or product, typically online platforms 
+      where you subscribe and manage your recurring payments or content access.
