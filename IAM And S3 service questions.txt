@@ -1,7 +1,7 @@
 IAM service 
 1.  How many resources do we have in IAM?
-Ans:  In AWS (Amazon Web Services), IAM (Identity and Access Management) allows you to control access to AWS services and resources. The number of IAM resources you have depends on your 
-    specific AWS account and usage. 
+Ans:  In AWS (Amazon Web Services), IAM (Identity and Access Management) allows you to control access to AWS services and resources. The number of IAM resources you have depends on 
+     your specific AWS account and usage. 
     User, roles, polices, groups, instance profile, server certificate, customer managed polices, SAMl provider (security assertion markup language provider), OIDC (openid connect).
 
 2.   what is IAM User?
