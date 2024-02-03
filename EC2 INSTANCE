@@ -1,0 +1,14 @@
+EC2 Notes
+ELastic compute cloud :  amazone ec2 provider scalability compability capacity in the aws cloud 
+how to limit the ec2 instance each region limit the create the instance is 20.(importan is interview question)
+
+type of ec2 instance total is 7
+ general purposes : balanced the momory and cpu
+compute optimize : more cpu than RAM
+memory optimized : more RAM
+accelerated computing and gpu : graphics optimization
+storage optimization : low latancy 
+high memory optimizated : high RAM NITRO SYSTEM
+
+GENERAL OPTIMIZATION : General purpose instance provide a balance of computer memory and networking resources and can be used for variety of work load.
+3 server of general purpose series A (A1) SERVER (IT WILL PROVIDE THE MEDIUM AND LARGE), T (T2) SERVER(AVALABLE SERVER NANO MICRO MEDIUM LARGE) AND M (M4, M5,)SERVER(AVALABLE LARGE SERVER)
