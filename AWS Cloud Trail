@@ -23,7 +23,6 @@ ans : To enable logging for an S3 bucket using AWS CloudTrail, you can follow th
 
 After completing these steps, CloudTrail will start logging events related to the specified trail in the designated S3 bucket.
 
-
 How do you get the list of all created trailers in your production account ?
 ans : command : aws cloudtrail describe-trails
 
@@ -56,10 +55,15 @@ Yes, you can disable logging for certain events or services in AWS CloudTrail. H
    - Review the changes you've made to the event logging configuration.
    - Click on "Save changes" to apply the modifications to your trail.
 After saving the changes, CloudTrail will stop logging the excluded events or services according to your configuration. Keep in mind that disabling logging for certain events or services 
- may affect your ability to audit and monitor activities within your AWS account. Make sure to carefully consider the implications before excluding any events or services from CloudTrail logs.
+may affect your ability to audit and monitor activities within your AWS account. Make sure to carefully consider the implications before excluding any events or services from CloudTrail logs.
 
 Real time use case of cloud trail ?
+ans : A real-time use case of AWS CloudTrail is monitoring and auditing user activity within an AWS environment, enabling security teams to track and analyze 
+API calls and changes made to AWS resources, helping to detect unauthorized access, troubleshoot operational issues, and ensure compliance with security policies and regulations.
 
 What is cloud trail event history ?
-What is log file integrity validation in cloud trail ?
+ans : AWS CloudTrail Event History is a record of API activity and actions taken within an AWS account over the past 90 days, enabling users to review, search, 
+and analyze recent events for security, compliance, and operational purposes.
 
+What is log file integrity validation in cloud trail ?
+ans : Log file integrity validation in AWS CloudTrail ensures that log files have not been tampered with or altered, providing assurance of the integrity and authenticity of the recorded API activity.
