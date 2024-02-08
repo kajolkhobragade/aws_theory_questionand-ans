@@ -28,9 +28,38 @@ How do you get the list of all created trailers in your production account ?
 ans : command : aws cloudtrail describe-trails
 
 Can we create a trail for a multi region, if yes then how can we configure it ?
+ans : Yes, you can create a trail for a multi-region setup by configuring an Amazon CloudTrail trail to capture logs from multiple regions simultaneously.
+To configure an existing single-Region trail to log in all Regions, you must use the AWS CLI. To change an existing trail so that it applies to all Regions, 
+add the --is-multi-region-trail option to the update-trail command.
 
 How can we disable the logging for certain events, services in cloud trail, If yes so explain how ?
+Yes, you can disable logging for certain events or services in AWS CloudTrail. Here's how you can do it:
+
+1. Sign in to the AWS Management Console : Go to the CloudTrail console at https://console.aws.amazon.com/cloudtrail/.
+
+2. Select the Trail :
+   - From the left navigation pane, click on "Trails".
+   - Select the trail for which you want to configure event logging.
+
+3. Edit the Trail :
+   - Click on the trail name to open its configuration.
+   - Click on the "Edit" button at the top right corner of the page.
+
+4. Modify Event Logging :
+   - Scroll down to the section labeled "Data events" or "Management events", depending on the type of events you want to modify.
+   - CloudTrail logs two types of events: management events (API calls made to AWS services) and data events (API calls made to resources within AWS services).
+   - To disable logging for specific services or events:
+     - For management events: Uncheck the box next to the service or event that you want to exclude from logging.
+     - For data events: Expand the service category, then uncheck the box next to the specific data event type or resource type you want to exclude from logging.
+   
+5. Review and Save Changes :
+   - Review the changes you've made to the event logging configuration.
+   - Click on "Save changes" to apply the modifications to your trail.
+After saving the changes, CloudTrail will stop logging the excluded events or services according to your configuration. Keep in mind that disabling logging for certain events or services 
+ may affect your ability to audit and monitor activities within your AWS account. Make sure to carefully consider the implications before excluding any events or services from CloudTrail logs.
+
 Real time use case of cloud trail ?
+
 What is cloud trail event history ?
 What is log file integrity validation in cloud trail ?
 
