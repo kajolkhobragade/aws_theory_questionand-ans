@@ -40,12 +40,36 @@ What is KMS ?
 ans : KMS stands for Key Management Service, which is a managed service provided by AWS for creating and controlling encryption keys used to encrypt data.
 
 AWS Amazon EC2 Instance types ?
+ans :  general purposes : balanced the momory and cpu
+     compute optimize : more cpu than RAM
+     memory optimized : more RAM
+     accelerated computing and gpu : graphics optimization
+     storage optimization : low latancy 
+     high memory optimizated : high RAM NITRO SYSTEM.
+
 How many types of status checks happen in aws ?
+ans :Amazon Web Services (AWS) monitors the health of each EC2 instance with two status checks. An EC2 instance becomes unreachable if a status check fails.
+
 When we see the global view option in ec2 service ?
+Amazon EC2 Global View enables you to view some of your Amazon EC2 and Amazon VPC resources across a single AWS Region, or across multiple Regions in a single console.
+
 When we logged into the cloud account by default why do we always jump into the north virginia region, why it’s most popular ?
+ans : By default, users often land in the North Virginia (us-east-1) region upon logging into their cloud account because it's one of the oldest and most established AWS regions,
+offering a wide range of services and availability zones, making it a popular choice for users worldwide.
+
 What are EBS Volumes and its types ?
+ans : Elastic Block Store (EBS) volumes are block-level storage devices for Amazon EC2 instances, offering persistent and flexible storage options. 
+Types include General Purpose (SSD), Provisioned IOPS (SSD), Cold HDD, Throughput Optimized HDD, and Magnetic.
+
 Purpose of Using EBS volumes ?
+ans : It's like a storage disk with the ability to contain various sizes of data. 
+     These virtual storage devices usually replicate within one AWS region to increase their availability. 
+     EBS volumes provide additional storage for EC2 instances, similar to a hard drive.
+
 How many types of purchasing options do we have in aws ec2 ?
+ans : AWS provides four main options to purchase Amazon EC2 Instances. They are On-Demand Instances, Reserved Instances, Spot Instances, and Savings Plans. 
+     Amazon also offers the additional option of Amazon EC2 Dedicated Hosts.
+
 Difference between AWS AMI Image & AWS Template ?
 What is NIC & it’s types ?
 What is elastic IP ? & WHY were we used ?
