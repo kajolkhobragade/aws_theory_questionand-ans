@@ -42,6 +42,8 @@ What is the meaning of server hibernating mode ?
 ans : Server hibernating mode is a state where a server's operating system and applications are temporarily 
 paused or put into a low-power state to conserve energy while preserving the current system state.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 What is KMS ?
 ans : KMS stands for Key Management Service, which is a managed service provided by AWS for creating and controlling encryption keys used to encrypt data.
 
@@ -222,3 +224,74 @@ Q103.What is difference between EBS/EFS/S3
           it is an region specific
     S3:- It is an object level storage when we storage any object it will store as it is not divides into blocks
         We store meta data.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AWS VPC:-
+What is VPC ?
+ans :  Virtual Private Natework It means we create our own network which is isolated from other networks
+    Only authorize peoples can access our network resources.
+
+What are the Subnets when working with VPC ?
+ans : Subnets decide how many resources we are creates in VPC
+    Subnets are a way to divide the IP address range of your VPC into smaller.
+    Subnets are created in a specific availability zone.
+
+What is NAT Device ?
+ans : Network addressing translate
+     With help of NAT device instances within pvt subnets access services out side the vpc & get internet connectivity.
+
+What is the difference between stateful & stateless filtering ?
+ans : stateful means whenever you add any rule in inbound  are automatically added in outbound. 
+    stateless means you add any rule in inbound after you also add in outbound not automatically added like stateful.
+
+What are the advantages of using default VPC ?
+ans : All are configured Route TABLES, Subnets, NACL,Route Tables.
+
+What is the internet gateway in VPC ?
+ans : With help of IG reources within vpc are connect to Internet
+    For that associate IG to route table means all traffic are redirect/going through IG.
+
+What is Network ACL in VPC ?
+ans :  NACl filter incoming traffic on your VPC/subnets
+    It act as firewall controls incoming traffic on subnet level.
+
+What is the Security Group in VPC ?
+ans : SG act as firewall on resources(EC2) within vpc
+
+What is an Elastic IP Address in VPC, and why do we need to use, realtime example ?
+ans : It is an static IP doest no change over time.
+    We attch Elastic IP to NAT GATEWAY.
+
+Can we attach one Production Elastic IP to the new Prod server ?
+ans :  Improved avaibility and fault tolerance means ALB monitor instances which are healthy or not and forward request to healthy instances
+    ELB evenly distributes incoming traffic among multiple EC2 instances.
+    number of incoming requests increases, ELB can distribute the load across additional instances.
+    ELB evenly distributes traffic across instances in all available Availability Zones.
+
+How does ELB Affect a VPC ?
+ans :  1 Gateway is attached to only 1 VPC.
+    1subnet is associate with only 1 route table. 
+
+What are the limitations of VPC’s, Gateway and subnets ?
+ans : With help of Public IP address instances are connect to internet.
+
+What is a Public IP Address and why do we use it ?
+ans : Whenever We have to access Private subnet instances How we can access it bcz it doesnt have an public IP.
+    At that time we access from Public Subnet instance through SSH. This concept called as Bastion Host.
+
+Explain Bastion Host Concept ?
+ans : Whenever We have to access Private subnet instances How we can access it bcz it doesnt have an public IP.
+    At that time we access from Public Subnet instance through SSH. This concept called as Bastion Host.
+
+When do we need to create a new customised VPC ?
+ans : Whenver In Single AWS account there can be multiple projects Keep/working to make secure from other projects then we need customized VPC.
+
+What is Peering ? Why do we need to peer at two VPC’s ?
+ans : Peering means we establish an private connection with Other VPC To share an data through PVT IP.
+
+What is VPN, Where do we use VPN Tunnel ?
+ans :  VPN is an virtual private network 
+    suppose you have server dont have an connectivity to your company data center so how can you access all resources within datacenter
+    For that we create site to site vpn connection between your on premises server and comapny data center
+    VPN TUNNEL is encrypted link & secure tunnel between our server and company VPC (remote) & all data can pass form comapany VPC to our server through Tunnel.
+
+
