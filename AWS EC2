@@ -30,7 +30,13 @@ EC2 Instance state ?
 ans : Running, Pending, Rebooting, Terminated, Stoped.
 
 How many types of EC2 Instance-State codes ?
-There are seven types of EC2 instance-state codes.
+ans : There are seven types of EC2 instance-state codes.
+     Pending Code: 0
+     Running Code: 16
+     Shutting Down Code:32
+     Terminated Code: 48
+     Stopping Code: 64
+     Stopped Code: 80
 
 What is the meaning of server hibernating mode ?
 ans : Server hibernating mode is a state where a server's operating system and applications are temporarily 
@@ -48,14 +54,17 @@ ans :  general purposes : balanced the momory and cpu
      high memory optimizated : high RAM NITRO SYSTEM.
 
 How many types of status checks happen in aws ?
-ans :Amazon Web Services (AWS) monitors the health of each EC2 instance with two status checks. An EC2 instance becomes unreachable if a status check fails.
+ans :2/2 - ALL ok
+    0/1-  Software issue
+    0/2-  hardware issue
 
 When we see the global view option in ec2 service ?
-Amazon EC2 Global View enables you to view some of your Amazon EC2 and Amazon VPC resources across a single AWS Region, or across multiple Regions in a single console.
+ans : Amazon EC2 Global View lets you see your virtual servers and networking setups across different areas all in one place, 
+     making it easier to manage them without switching between multiple screens.
 
 When we logged into the cloud account by default why do we always jump into the north virginia region, why it’s most popular ?
-ans : By default, users often land in the North Virginia (us-east-1) region upon logging into their cloud account because it's one of the oldest and most established AWS regions,
-offering a wide range of services and availability zones, making it a popular choice for users worldwide.
+ans : Bcz it is an 1st region launched by AWS When any new service oer resources are comes in AWS so 1st it launch in VIRGINIAN region,
+    High availability of this region bcz It has 6 AZs.
 
 What are EBS Volumes and its types ?
 ans : Elastic Block Store (EBS) volumes are block-level storage devices for Amazon EC2 instances, offering persistent and flexible storage options. 
@@ -67,35 +76,149 @@ ans : It's like a storage disk with the ability to contain various sizes of data
      EBS volumes provide additional storage for EC2 instances, similar to a hard drive.
 
 How many types of purchasing options do we have in aws ec2 ?
-ans : AWS provides four main options to purchase Amazon EC2 Instances. They are On-Demand Instances, Reserved Instances, Spot Instances, and Savings Plans. 
-     Amazon also offers the additional option of Amazon EC2 Dedicated Hosts.
+ans : AWS provides four main options to purchase Amazon EC2 Instances. 
+      On demand- 
+     Dedicated host
+     Dedicated instance 
+     Spot instance
+     Reserved instance
+
 
 Difference between AWS AMI Image & AWS Template ?
-What is NIC & it’s types ?
-What is elastic IP ? & WHY were we used ?
-What is the snapshot of why we use it ?
-How can we save money in snapshot costing, if an automated snapshot has been created ?
-What is the lifecycle manager in snapshot ?
-How does the Amazon lifecycle manager work ?
-Difference between Security Group & NACL ?
-What are NACL & Its types ?
-How many IP Addresses can we attach to the instances ?
-How many types of volume states do we have ?
-What is a key pair, and its types ?
-What is load balancer and its types ?
-How does the load balancer work in the backend? Can you explain it ?
-Features of Load Balancers ?
-What is ASG ? & Its types ?
-What is a Health Check ?
-What is the threshold ?
-What is the group of LB ?
-Why do we prefer ALB over ALB ?
-Difference between Web server & Application server ?
-What is the target group ?
-What is the desired capacity in ASG ?
-How many types of the Scaling option ?
-Scaling plans ?
-Types Auto scaling
-Difference between vertical scaling and horizontal scaling ?
-Difference between AMI & Snapshot ?
+ans :  We create Template for autoscaling group it means when instance are created same replica \
+    created which we are configured in template.    
+    AWS AMI image means backup of software or volume
+    suppose that you have instance all webserver application are configured and you need another instance 
+    with same configuration so why we need to waste time for creating another instance
+    Create Image of existing instance after create instance from AMI IMAGE. 
 
+What is NIC & it’s types ?
+ans :  NIC is a Network Interface Card.it is used to that hardware component that allows a device to connect to a network. 
+     Types include Ethernet NICs for wired connections and Wi-Fi NICs for wireless connections.
+
+What is elastic IP ? & WHY were we used ?
+ans : Elastic IP means reserved public ip addressed like it will not change over time when we stopped an EC2 machine
+    bcz it will change when we stopped an ec2 m/c. The main purpose of these IPs is to mask the failure of software or instance from your AWS account.
+
+What is the snapshot of why we use it ?
+ans :  A snapshot is a point-in-time backup of an EBS volume in AWS, used for data backup, disaster recovery, and creating new volumes with the same data.
+
+How can we save money in snapshot costing, if an automated snapshot has been created ?
+ans : To save money on snapshot costs, regularly review and delete outdated or unused snapshots to avoid unnecessary storage charges.
+
+What is the lifecycle manager in snapshot ?
+ans :  suppose we have to take backup/snapshot of volumes daily,monthly,weekly
+    For that create lifecycle manager policy defines time and frequency on the basis of policy it takes snapshot at given time.
+
+How does the Amazon lifecycle manager work ?
+ans : we create policy and add volums with help of tags & defines frequency and time
+    on the basis of frquency and given time it takes snapshot
+    suppose we give frquency dailt specify time 9:00AM every day at 9:00AM snapshot will be created.
+ 
+Difference between Security Group & NACL ?
+ans : SG work on firewall at the  instance level where nacl are stateless
+    NACL work on firewall at the subnet and VPC level where dg are statefull.
+
+What are NACL & Its types ?
+ans :
+How many IP Addresses can we attach to the instances ?
+ans :  Public and private.
+
+How many types of volume states do we have ?
+ans :  Creating
+    available
+    In use
+    Deleting 
+    Deleted.
+
+What is a key pair, and its types ?
+ans :  Key pair is an secure login information for of your instances
+    with help of key pair we login an remote m/c on our local machine
+    Public key and private key
+    Public is stored to AWS and pvt key files is store on our local m/c.
+
+What is load balancer and its types ?
+ans : load balancer distributes incoming web application traffic across multiple targets/instances in multiple AZ.
+    Types :- classical, application, network and gateway.
+
+How does the load balancer work in the backend? Can you explain it ?
+ans : Whenever traffic comes on load balancer listeners check for connection request from clients with help of ports what you configured
+    it will forward tarffic to registered targets using round robin algorithm.
+    LB continously monitor instance health using ping if any instance is unhealthhy it will forward traffic to only healthy instances.
+    
+Features of Load Balancers ?
+ans : Provide fault taulerance and high availability
+    ALB allows you to route traffic based on the URL path we mention path in listeners rule.
+    In nlb maximum amount pass in minimum time
+
+What is ASG ? & Its types ?
+ans :  Basically ASG will decide desire, maximum, minimum size of autoscaling group.
+    We wiil define capacity of instances as per our requirement we also give target values of cpu
+    utilization. On the basis of that it will scale up and scale down targets when traffic increases.
+
+What is a Health Check ?
+ans :  It check healths of instance where an instance face any problem like software or hardware problem.
+
+What is the threshold ?
+ans :  it means specific value limit. Whenever it reaches value limit after action is performed.
+
+What is the group of LB ?
+ans : It is an Target Groups
+    Target Group nothing but an group of targets (lambda, instance, ALB)
+    Target Groups are used with Application Load Balancers and Network Load Balancers.
+
+Why do we prefer ALB over ALB ?
+
+Difference between Web server & Application server ?
+ans : webserver:- 
+    responsibility of a web server is to handle HTTP requests.
+    webserver is serves only static content to end users\
+    no need database connectivity bcz severs static content.
+    example: apache http, nginx , A simple portfolio website with fixed content and no user interaction
+Application server:- 
+    responsibility of an application server is to execute application code and generate dynamic content based on client requests.
+    The application server executes server-side code, processes dynamic requests, interacts with databases, and generates content based on user input.
+    The application server communicates with the database to fetch or update information as needed.
+    example :- apache tomcat, An e-commerce website with product listings, user accounts, and shopping cart functionality database to store product and user data.
+
+What is the target group ?
+ans :  When we use ALB at that time we have to create Target group
+    We add targets (instances, lambda, alb) in target group, and add Target group ALB.
+
+What is the desired capacity in ASG ?
+ans :  It means minumim no of running servers when we launch ASG after it creates instances
+    Suppose we have to give Desired capacity 2 so in every situation minimum 3 instances runs load will increase or decrease no matters.
+
+How many types of the Scaling option ?
+ans :  Vertical scaling
+    Horizontal Scaling.
+
+Scaling plans ?
+1] dynamic scaling - a]target tracking policy
+                     b]simple scali9ng
+                    c] step scaling
+2]schedule scalimg
+3]predictive scaling
+
+Types Auto scaling?
+ans : Dynamic scaling
+    Predictive scaling 
+    Schedule Scaling
+
+Difference between vertical scaling and horizontal scaling ?
+ans : vertical scaling:- we scale up manually existing instance rather than create replica of existing instance.
+      Horizontal Scaling:- It means whenever traffic increses it will automatically scale up same replica of instance what will you configure in template
+
+Difference between AMI & Snapshot ?
+ans : AMI consist of application servers and os which are need to create instances
+    Snapshot is backup of only volumes.
+
+Q103.What is difference between EBS/EFS/S3
+      EBS :- Ebs is an block level storage & block storage divide data into blocks
+           OS are install in EBS & It is used in form of HDD and SSD.
+           it is AZ specific
+     EFS:- It is mount on instance and it can mount on more thatn 1 instance
+          using efs we share files to all mounted instance
+          it is an region specific
+    S3:- It is an object level storage when we storage any object it will store as it is not divides into blocks
+        We store meta data.
