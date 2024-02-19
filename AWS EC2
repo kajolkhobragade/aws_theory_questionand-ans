@@ -3,13 +3,42 @@ ans : Amazon Elastic Compute Cloud (Amazon EC2) is a web service that provides s
 computing easier for developers. Amazon EC2's simple web service interface allows you to obtain and configure capacity with minimal friction.
 
 Features of Amazon EC2 ?
+ans : Global Infrastructure,Cost and Capacity Optimization, Storage, Networking, Operating Systems and Software, Maintenance, Intended Usage And Restriction.
+
 What is Hypervisor ? and its types ?
-Where we use hypervisor
+ans : A hypervisor is a software that creates and manages virtual machines (VMs) on a physical server, allowing multiple operating systems to run concurrently on the same hardware.
+Types of hypervisors:
+Type 1 (Bare Metal): Installed directly on the physical hardware, providing high performance and efficiency.
+Type 2 (Hosted): Installed on top of an existing operating system, suitable for development and testing environments.
+
+Where we use hypervisor?
+ans : Hypervisors are used to create and manage virtual machines, enabling efficient resource utilization, scalability, and flexibility across various computing environments.
+     A hypervisor is a software that you can use to run multiple virtual machines on a single physical machine.The hypervisor allocates the underlying physical computing resources such as CPU and memory 
+      to individual virtual machines as required.
+
 Steps to create an EC2 instance.
+ans : Step 1: Sign in to the AWS Management Console. EC2 dashboard. 
+Step 2: Choose a name of your instance. 
+Step 3: Choose an Amazon Machine Image (AMI) 
+Step 4: Choose an Instance Type. 
+Step 5: Create a key pair. 
+Step 6: Configure Security Group. 
+Step 7: Add Storage. 
+Step 8: Review and Launch.
+
 EC2 Instance state ?
+ans : Running, Pending, Rebooting, Terminated, Stoped.
+
 How many types of EC2 Instance-State codes ?
+There are seven types of EC2 instance-state codes.
+
 What is the meaning of server hibernating mode ?
+ans : Server hibernating mode is a state where a server's operating system and applications are temporarily 
+paused or put into a low-power state to conserve energy while preserving the current system state.
+
 What is KMS ?
+ans : KMS stands for Key Management Service, which is a managed service provided by AWS for creating and controlling encryption keys used to encrypt data.
+
 AWS Amazon EC2 Instance types ?
 How many types of status checks happen in aws ?
 When we see the global view option in ec2 service ?
