@@ -431,6 +431,17 @@ Detach the volume from the secondary instance and reattach it to the original in
 Start the instance and connect using the new key pair.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AWS Cloud Trail:-
+Configure and enable the trail for multi region in your both staging and production account.
+ Configure and enable the trail for the only hyderabad region in your both staging and production account.
+Create a trail for one service S3 by default it enables all logging features, you guys disable some features of logging.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AWS SNS:-
+Configure SNS with s3 static website.
+Configure SNS with Email server level notification with Load Balancer configuration .
+Configure the SNS with SMS level.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Databases:-
 We have one e-comm vendor who has on-premises data but he needs to migrate his product’s data into cloud DynamoDB. So we received this project and we have to complete it before the timeline.
 Note:- Here below I am sharing your on-prem product catalogue data so you guys have to migrate it into DynamoDB Cloud.
