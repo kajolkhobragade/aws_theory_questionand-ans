@@ -1,0 +1,456 @@
+Task documentation:
+
+
+1)Create a policy to access all objects in a specific bucket.
+
+Step 1: Log in to AWS Console
+   - Go to the AWS Management Console and log in to your AWS account.
+
+Step 2: Go to IAM (Identity and Access Management)
+  
+Step 3: Create a New Policy
+   - In the IAM dashboard, click on "Policies"
+   - Click on the "Create policy" 
+
+Step 4: Choose a Policy Type
+   - Select "JSON" as the policy type. This allows you to define the policy in JSON format, which is a common way to represent structured data.
+
+Step 5: Define the Policy
+   
+   ```json
+   {
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Effect": "Allow",
+               "Action": [
+                   "s3:GetObject"
+               ],
+               "Resource": "arn:aws:s3:::s3userk3/*"
+           }
+       ]
+   }
+   ```
+
+   This policy grants read (`GetObject`) access to all objects (`/*`) in the specified bucket.
+
+Step 6: Review and Save the Policy
+   - Review the policy to ensure it's correct.
+   - Click on the "Review policy" button.
+   - Give your policy a name and description if prompted.
+   - Click on the "Create policy" button to save it.
+
+Step 7: Attach Policy to IAM Users/Roles
+   - After creating the policy,  to attach it to the IAM users or roles that require access to the S3 bucket.
+   - Go to the "Users" or "Roles" section in the IAM dashboard.
+   - Select the IAM user or role to which you want to attach the policy.
+   - Click on the "Add permissions" button.
+   - Choose "Attach existing policies directly".
+   - Search for the policy  created earlier, select it, and click on the "Next: Review" button.
+   - Review the attached policies and click on the "Add permissions" button to finish.
+
+ successfully created a policy to grant access to all objects in a specific S3 bucket and attached it to the appropriate IAM user or role.
+
+
+2)Create a policy to access only 2 objects in a specific bucket.
+Ans : same steps follow by task 1 
+  Json code : 
+       {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::s3userk3/object1",
+                "arn:aws:s3:::s3userk3/object2"
+            ]
+        }
+    ]
+}
+
+
+3)Create a policy to deny the access of Specific bucket.
+Ans :  same all steps :
+Json code : {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action": [
+                "s3:*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::kajol11",
+                "arn:aws:s3:::kajol11/*"
+            ]
+        }
+    ]
+}
+
+4) Create policy to create the user only and can attach policy to them.
+   create policy and select service iam and go to the permission and attached policy
+      list -list users
+      read -GetAccountPasswordPolicy
+      write - create user
+
+5) Create a policy to place the user in a group only.
+   create policy for user to add another user in group
+      allow for action and select actions
+      read= list user, list group, list group for user
+      read= get group
+      write= add user
+
+6) Policy to get "read" access of all users, groups but not policy.
+   create policy select service iam
+     create policy to a read all users and group but but not policy
+     create policy and allow for actions :- 
+     list - list users, list groups.
+
+7) Policy to get access to billing, ec2 and cloudwatch.
+
+8) How to give access only to northern virginia.
+Add 4 users >> 2 groups (devops & cloud) >> cloud member will access their password will only no & devops group there no will password standards
+>> cloud group SE3 full access % other EC2 full access >> Devops EC2 full access in north virginia.
+
+ Step 1 : create the 4 users and group.
+
+Create the cloud group and attach the password authentication so first go to am I service select the read permission and select the get account password policy select.
+Create four users: kajol, vishu, ashu, monu.
+Create two groups: devops and cloud.
+Set Password Requirements:
+For the cloud group, password-only access.
+For the devops group, no password standards.
+Define Permissions:
+Cloud Group:
+Full access to S3 .
+Limited access to EC2, only SE3 instances.
+Now go to add permision click attach policy and select s3 full access. 
+Than get the permision also ec2 full access.
+Devops Group:
+Full access to EC2 in the North Virginia region.
+
+Step 6: Create IAM Policies
+Create IAM Policies:
+Navigate to the "Policies" section in the IAM console.
+Create two policies: one for the cloud group and one for the devops group.
+Cloud Group Policy :
+json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "ec2:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": "*"
+        }
+    ]}
+Devops Group Policy :
+json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "ec2:*",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "ec2:Region": "us-east-1"
+                }
+            }
+        }
+]
+}
+Step 7: Attach Policies to Groups
+Attach Policies to Groups:
+Go back to the "Groups" section in the IAM console.
+Click on the "devops" group.
+Attach the devops group policy to this group.
+Similarly, attach the cloud group policy to the "cloud" group.
+Now, the users are created, grouped, and have associated policies based requirements.
+
+9) Create a policy like when users are login into console, Without MFA not a single IAM user has able to access any AWS kind of aws services, 
+he gots an permission denied error.
+
+10) Create a resource based policy and attach to S3_B16 Bucket & only sunny user can able to access that bucket.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+User Task :
+1) Add four different users in the organisation account.
+
+Step 1: Add Four Different Users in the Organization Account
+GO to the IAM (Identity and Access Management) console in the AWS Management Console.
+Click on "Users" 
+Click on "Add user".
+Enter the desired username for each user ( user1, user2, user3, user4).
+Ensure that "Access type" is set to "AWS Management Console access".
+For each user, choose "Autogenerated password" or "Custom password" and provide a password.
+Click "Next: Permissions".
+Review the user details and click "Create user".
+Repeat this process for each user.
+
+Step 2: Add One User Without Permissions
+Follow the same steps as above to create a new user.
+When setting permissions for the user, don't attach any policies.
+
+
+Step 3: Add User with Console & Programmatic Access
+Follow the same steps as above to create a new user.
+For "Access type", select both "AWS Management Console access" and "Programmatic access".
+
+Step 4: Set Password for an IAM User Created Without a Password
+If an IAM user is created without specifying a password, you cannot directly set a password for that user as an administrator without deleting and recreating the user. 
+However, you can reset the user's password if the user has been assigned the permissions to change their password.
+
+Step 5: Add User Without Any Permission (Permission Denied)
+Follow the same steps as above to create a new user.
+When setting permissions for the user, do not attach any policies.
+
+Step 6: Provide S3 Read-Only Access
+Create a new policy with permissions limited to S3 read-only access.
+Attach the policy to the user(s) who require S3 read-only access.
+
+Step 7: Provide Jarvis Admin Access
+Create a new policy with permissions required for Jarvis Admin access.
+Attach the policy to the user(s) who require Jarvis Admin access.
+
+Step 8: Add User with Programmatic Access
+Follow the same steps as above to create a new user.
+For "Access type", select "Programmatic access" only.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1) S3 Read Only Access: 
+
+Go to bucket and select the permission tab and than select the attached the police and select the s3 full acces policy permision.
+
+S3:-
+
+2) Implement MFA on Bucket when users are going to delete any objects, then he needs an Approval from MFA Code.
+Step 1: 
+Open S3 Console Go to the S3 service by either searching for S3 in the AWS services search bar or selecting it from the list of services under the "Storage" category.
+Select the Bucket than Click on the name of the bucket for which you want to enable MFA Delete.
+
+Step 2 : 
+Access Permissions Tab go to the  inside the bucket, go to the "Permissions" tab. And click on the Edit Bucket Policy.
+
+Step 3: Add MFA Delete Statement  Add a bucket policy statement that requires MFA authentication for object deletion. You can add something similar to this to your bucket policy:
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RequireMFAForDelete",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:DeleteObject",
+            "Resource": "arn:aws:s3:::s3b7/*",
+            "Condition": {
+                "Bool": {
+                    "aws:MultiFactorAuthPresent": "false"
+                }
+            }
+        }
+    ]
+}
+
+Step 4: 
+After adding the policy statement, click on the "Save changes" button to save the updated bucket policy.
+
+Now, whenever a user tries to delete an object from this bucket using the AWS Management Console, they will be prompted to provide MFA authentication. 
+If they don't provide MFA authentication, the delete action will be denied.
+
+Create a Bucket with cli commands & upload the object from cli mode.
+
+Open cloudshell  terminal or command prompt where you have the AWS CLI installed. Create Bucket Use the aws s3api create-bucket command to create an S3 bucket. 
+
+Step 1 : configure the aws cli
+Command : aws configure
+
+Step 2 : create the bucket in aws cli
+Command : aws s3api create-bucket --bucket your-bucket-name --region your-region
+
+Step 3: Upload the object in s3 bucket :
+Command : aws s3api create-bucket --bucket your-bucket-name --region your-region
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3) Complete one project with server less static website hosting, with deployment & after deployment management of the website in backend side. Make a proper document of 
+that project.
+
+Step 1: S3 → create a bucket → 
+Step 2: download one css template from google and extract it in your local system. Step 3: Create one bucket → upload css template file in that bucket.
+[Note: Move index.html and templates outside] 
+Step 4: Then go to properties and enable static website hosting. S3 → bucket → properties → enable website hosting → enable it Create index.html —> website will host from this file.
+
+Enable static website hosting on the bucket.
+
+Step 5 : enable permissions. 
+a) Enable public access. S3 go to the  bucket select  permission and click on block public access (enable).
+
+b) Object ownership – do acl enable S3 → bucket → permission → object ownership → Acl enabled.
+
+ c) Edit acl permission make it public. S3 bucket select permission chooes acl enable.
+
+ Step 6: Then give public permission to all objects. S3 → bucket → object → select all objectsgo to security  select make public using CLI.
+
+Step 7: Now copy static websit link and paste it on google. S3 → bucket → object → properties → static website listing → copy link → paste it on google.
+Step 8:  copy the static website link and paste the url in google.
+Step 9 : select the all object and give the permission in make public access.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+AWS EC2:-
+1) Create an Application Load Balancer with mobile, laptop, tablet, clothes, shoes pages?
+step 1 : Launch EC2 Instances 
+Navigate to "Instances" under the "Instances" section in the EC2 Dashboard.
+Launch EC2 instances based on your requirements  choose the appropriate AMI, instance type, and configure security groups.
+Ensure that each instance has the necessary web server (e.g., Apache, Nginx) configured to serve the corresponding web pages.
+
+step 2 : Create Target Groups:
+ create a separate target group for each type of page (mobile, laptop, tablet, clothes, shoes).
+In the EC2 Dashboard, navigate to "Target Groups" under the "Load Balancing" section.
+Click on "Create target group".
+Provide a name for the target group, choose the target type (e.g., instance, IP), and configure health checks if necessary.
+Repeat this step to create a target group for each type of page.
+
+step 3 : Create an Application Load Balancer:
+Now, let's create the Application Load Balancer and configure it to use the target groups we created.
+In the EC2 Dashboard, navigate to "Load Balancers" under the "Load Balancing" section.
+Click on "Create Load Balancer".
+Choose "Application Load Balancer" as the load balancer type and click "Create".
+Configure the load balancer settings such as name, scheme, listeners, and availability zones.
+In the "Configure Routing" step, choose "Create a new target group" for each page type and select the corresponding target group you created earlier.
+Complete the remaining steps of the load balancer creation wizard.
+step 4 : than go to load balancer and select the detail. and check the DNS url and copy DNS URL and paste thr google prompte.
+it will show the webpage related the mobile, laptop,shoes etc.
+
+2) Create a Simple Application Load Balancer with Auto scaling and host any free css template.
+ans : To create a simple Application Load Balancer (ALB) with Auto Scaling and host a free CSS template, follow these step-by-step processes:
+
+step 1. Launch EC2 Instances:
+   - Navigate to the EC2 Dashboard.
+   - Click on "Launch Instance".
+   - Choose an Amazon Machine Image (AMI), preferably a Linux-based one.
+   - Select an instance type based on your requirements.
+   - Configure instance details, including the network settings, subnet, and security group. Ensure that the security group allows HTTP (port 80) and HTTPS (port 443) traffic.
+   - adding storage and tags (or add as needed).
+   - Review and launch the instance. Choose an existing key pair or create a new one to connect to  instances.
+
+step 2. Create an Auto Scaling Group:
+   Next, create an Auto Scaling Group to automatically scale the number of instances based on demand.
+
+   - In the EC2 Dashboard, under "Auto Scaling", select "Auto Scaling Groups".
+   - Click on "Create Auto Scaling group".
+   - Choose the EC2 instance you launched earlier.
+   - Configure scaling policies based on  requirements (e.g., target tracking scaling).
+   - Configure the network and subnet settings.
+   - Set up notifications if needed.
+   - Review and create the Auto Scaling group.
+
+step 3. Create a Target Group :
+   Now,  create a target group for the ALB to route traffic to the instances.
+   - In the EC2 Dashboard, under "Load Balancing", select "Target Groups".
+   - Click on "Create target group".
+   - Provide a name for the target group and configure the target type and health checks.
+   - Add the EC2 instances created earlier to this target group.
+
+step 4. Create an Application Load Balancer:
+   Let's create the ALB to distribute incoming traffic across the instances.
+   - In the EC2 Dashboard, under "Load Balancing", select "Load Balancers".
+   - Click on "Create Load Balancer".
+   - Choose "Application Load Balancer".
+   - Configure the load balancer settings, including listeners, availability zones, security settings, and routing to the target group created earlier.
+   - Review and create the ALB.
+
+step 5. Upload and Configure Your CSS Template:
+   - Connect to your EC2 instances using SSH.
+   - Install a web server software like Apache or Nginx.
+   - Upload your free CSS template files to the appropriate directory (e.g., `/var/www/html` for Apache).
+   - Configure the web server to serve these files.
+That's it! You've now created an Application Load Balancer with Auto Scaling and hosted a free CSS template on AWS.
+
+
+3). Create a simple classic Load Balancer.
+ans : Create a Simple Classic Load Balancer:
+Navigate to the EC2 Dashboard.
+Under "Load Balancers", click on "Create Load Balancer".
+Choose "Classic Load Balancer".
+Configure the load balancer with listeners, availability zones, security settings, and routing.
+Complete the wizard and create the load balancer.
+
+4). Create an AMI Image, with name(tomcat-ami-v1) from an existing running tomcat server.
+ans Create an AMI Image from an Existing Running Tomcat Server:
+Connect to the running Tomcat server using SSH.
+Ensure that all necessary configurations and customizations are in place.
+Create an AMI (Amazon Machine Image) from the EC2 console by selecting the instance and choosing "Create Image (AMI)" from the "Actions" dropdown menu.
+Give the AMI a name (e.g., tomcat-ami-v1) and description, then create the image.
+
+5). Host any customised HTML web page in Ubuntu server.
+ans : Host Customized HTML Web Pages:
+For Ubuntu  servers, you can use Apache or Nginx as web servers.
+Install the web server software on the respective servers.
+Upload your customized HTML web pages to the appropriate directory (e.g., /var/www/html for Apache).
+Configure the web server to serve these HTML pages.
+For Windows Server, you can use Internet Information Services (IIS) to host the HTML pages.
+Install and configure IIS on the Windows Server.
+Upload the HTML pages to the appropriate directory in IIS.
+
+6). Host any customised HTML web page in RedHat 9 server.
+ans : same step follow the task 5
+7) Host any customised HTML web page in windows 11 server.
+ans : same step follow the task 5
+8) Create a one EC2 Instance with debian family, create an 1000 no of jarvis.txt files and mount the existing S3 bucket into the same server and do upload all the jarvis.txt files into s3 bucket using aws command line tool.
+ans : launch ubuntu 
+    create role --> use case EC2 --> add permission for S3 --> create
+    attach role to instance
+    access instance through SSH and install awscli
+    aws s3 ls
+    create files ------   touch jarvis.txt{1..1000}
+    copy file to S3 bucket 
+
+9) Do task number 1 in AWS EC2 in scripting. Automate the whole server level configuration.
+
+10) If your server lost the key-pair, and you wanna take a ssh of that server, then how can you recover the key and take a ssh. (Want the practical, with documentation)
+ans : 
+ If you lose access to an EC2 instance due to a lost key pair, you can create a new key pair from the AWS Management Console.
+Stop the instance if it's running.
+Detach the root volume of the instance.
+Attach the root volume to another instance as a secondary volume.
+Access the secondary volume and replace the authorized_keys file in the .ssh directory with your new public key.
+Detach the volume from the secondary instance and reattach it to the original instance.
+Start the instance and connect using the new key pair.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Databases:-
+We have one e-comm vendor who has on-premises data but he needs to migrate his product’s data into cloud DynamoDB. So we received this project and we have to complete it before the timeline.
+Note:- Here below I am sharing your on-prem product catalogue data so you guys have to migrate it into DynamoDB Cloud.
+
+URL:-
+https://taskbuckket.s3.ap-south-1.amazonaws.com/product/ProductCatalog.json
+https://taskbuckket.s3.ap-south-1.amazonaws.com/product/ProductCatalog.json
+https://taskbuckket.s3.ap-south-1.amazonaws.com/product/Reply.json
+https://taskbuckket.s3.ap-south-1.amazonaws.com/product/Thread.json
+https://taskbuckket.s3.ap-south-1.amazonaws.com/product/Copy+of+ProductCatalog.json
+
+Create any 2 databases, tables and store the data into that table in virtualbox consider it as your on-prem database. After creating it you guys have to migrate the on-prem database into the cloud. 
+Hint: For that you can use EC2 & RDS
+
+Create a Database Table, Items and attribute in DynamoDB but using programmatic access not a console access.
+
+3-Tier Architecture Stepwise:
+You guys firstly setup 2-Tier Architecture.
+Deploy the reverse proxy in first Tier using nginx web-server
+Attach Domain
+Attach SSL to that Domain Name
+Check Nginx version you found Legacy versions 1.18 is deployed then you have to upgrade your web-server into Latest version of Nginx (1.24) without downtime of StudentApp Application (Production)
+Coming soon…………..
