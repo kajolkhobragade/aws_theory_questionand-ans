@@ -1,0 +1,16 @@
+DevOps Questions
+1) How can you merge multiple commits into one commit id?
+  answer : 
+2) What is git diff?
+3) How can we drop multiple indexing files in stash?
+4) Branching strategies workflow.
+5) Ansible tower configuration and setup
+6) Make connections to the Ansible master server with nodes which are present on premises as well as on cloud.
+7) Write a single playbook with global and local variables.
+8) Write a script for the prompt variable.
+9) Write a script for git pull push where the commit message will be the same.
+10) Write a playbook in which package install,start,enable,deployment, uninstall modules are present.
+11) Difference between ad hoc and vault.
+12) Create a Directory and 3 files inside that directory with any content put into the script, when we run the script in output we have to show the output of all three files. This script has to run without execution permission.
+13) how to view the hidden value prompt url.
+14)  what is hashes in terraform.
