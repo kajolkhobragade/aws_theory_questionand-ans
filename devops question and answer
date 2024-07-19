@@ -21,3 +21,33 @@ ans:
 12) Create a Directory and 3 files inside that directory with any content put into the script, when we run the script in output we have to show the output of all three files. This script has to run without execution permission.
 13) how to view the hidden value prompt url.
 14)  what is hashes in terraform.
+
+You are managing multiple AWS accounts for different departments within an organization. The MCQ asks about the best strategy to optimize costs from the following:
+ans:Enable AWS Organizations and utilize consolidated billing to receive a single monthly bill for all accounts.
+desription:
+This option allows you to maintain separate accounts for each department while still getting the benefits of consolidated billing, which can lead to volume discounts and better overall cost management. 
+It simplifies the billing process while still providing detailed cost tracking for individual teams.
+
+You have a public-facing web server (EC2 instance A) in a public subnet and a private database server (EC2 instance B) in a private subnet within the same VPC. 
+ans:Create two security groups:
+Security group A for instance A: Allow inbound HTTP traffic on port 80 from 0.0.0.0/0 and outbound all traffic.
+Security group B for instance B: Allow inbound traffic only from the security group ID of security group A on port 3306 (MySQL) and outbound all traffic.
+This setup ensures that:
+Instance A is accessible from the internet for web traffic.
+Instance B only allows access to the database from instance A.
+So, the correct option is:
+Create two security groups:
+Security group A for instance A: Allow inbound HTTP traffic on port 80 from 0.0.0.0/0 and outbound all traffic.
+Security group B for instance B: Allow inbound traffic only from the security group ID of security group A on port 3306 (MySQL) and outbound all traffic.
+
+You have a lifecycle rule configured to transition objects from Standard Storage to Glacier storage after 30 days. 
+However, you mistakenly uploaded a critical file that needs to be accessed frequently.How can you expedite access to this specific file without
+changing the lifecycle rule for the entire bucket?
+ans:Change the storage class of the object to Standard Storage individually.
+Change the storage class of the object to Standard Storage individually.
+This allows you to move the critical file back to a storage class that supports frequent access without altering the lifecycle configuration for the rest of the bucket.
+
+You have a multi-tier application in a Kubernetes cluster with a frontend deployment and a backend service. You want to restrict the backend service to only accept traffic from the frontend deployment.
+ans:Create a Network Policy in the backend service namespace to allow ingress traffic only from the frontend deployment pods.
+
+This option leverages Kubernetes Network Policies to control traffic at the namespace level, ensuring that only the frontend pods can communicate with the backend service.
